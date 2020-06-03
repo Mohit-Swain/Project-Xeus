@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./stylesheets/main-style.css" />
 </head>
 
-<body class="bg-white">
+<body class="bg-white" style="overflow-y: hidden;">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand mb-0 h1" href="#">AlgoAssassis</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -39,15 +39,32 @@
             </li>
         </div>
     </nav>
-    <form action="/login" method="post">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
 
-        <input type="submit" value="Login">
-    </form>
-
+    <div class="d-flex  " style="height: 100vh;">
+        <div class="flex-child col-5 " style="background-color: #06bca5; padding: 2rem;">
+            <!-- ok -->
+            <form action="/login" method="post" class="vertical-center rounded"
+                style="border: 3px dashed whitesmoke; padding: 2rem;">
+                <div class="form-group row">
+                    <label for="exampleInputEmail1" class=" col-form-label col-sm-3">Email address</label>
+                    <input type="email" class="form-control col-sm-9" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    <small id="emailHelp" class="form-text text-muted ml-auto">We'll never share your email with
+                        anyone
+                        else.</small>
+                </div>
+                <div class="form-group row">
+                    <label for="exampleInputPassword1" class=" col-form-label col-sm-3">Password</label>
+                    <input type="password" class="form-control col-sm-9" id="exampleInputPassword1"
+                        placeholder="Password" name="password">
+                </div>
+                <input type="submit" class="btn btn-outline-light d-block mx-auto" value=" Login">
+            </form>
+        </div>
+        <div class="flex-child img-fluid col-7 ">
+            <img src="images/pc_login.svg" class="w-100 vertical-center" alt="">
+        </div>
+    </div>
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
