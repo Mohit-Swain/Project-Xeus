@@ -8,8 +8,11 @@ const logger = require("morgan");
 const sequelize = require('./utils/database/sequelize_init');
 
 // db modules
-const user_module = require('./models/database/user_model');
-const teacher_module = require('./models/database/teacher_model');
+const user_model = require('./models/database/user_model');
+const teacher_model = require('./models/database/teacher_model');
+const student_model = require('./models/database/student_model');
+const ta_model = require('./models/database/ta_model');
+
 
 // Routes
 const authRoutes = require('./routes/auth/user_auth');
@@ -53,6 +56,7 @@ app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
+  console.log(err);
 
   // render the error page
   res.status(err.status || 500);

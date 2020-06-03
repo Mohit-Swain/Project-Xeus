@@ -14,9 +14,9 @@ const User = sequelize.define('user', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    user_type: {
-        type: Sequelize.ENUM('teacher', 'ta', 'student')
-    }
+    // user_type: {
+    //     type: Sequelize.ENUM('teacher', 'ta', 'student')
+    // }
 });
 
 module.exports = User;
