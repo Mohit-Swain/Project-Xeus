@@ -15,10 +15,10 @@ const User = sequelize.define('user', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    // user_type: {
-    //     type: Sequelize.ENUM('teacher', 'ta', 'student'),
-    //     allowNull: false
-    // }
+    user_type: {
+        type: Sequelize.ENUM('teacher', 'ta', 'student'),
+        allowNull: false
+    }
 });
 
 module.exports = User;

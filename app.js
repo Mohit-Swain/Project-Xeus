@@ -8,11 +8,15 @@ const express_session = require('express-session');
 
 const sequelize = require('./utils/database/sequelize_init');
 
-// // db modules
-// const user_model = require('./models/database/user_model');
-// const teacher_model = require('./models/database/teacher_model');
-// const student_model = require('./models/database/student_model');
-// const ta_model = require('./models/database/ta_model');
+// db modules
+const user_model = require('./models/database/user_model');
+const teacher_model = require('./models/database/teacher_model');
+const student_model = require('./models/database/student_model');
+const ta_model = require('./models/database/ta_model');
+
+student_model.belongsTo(user_model, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+ta_model.belongsTo(user_model, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+teacher_model.belongsTo(user_model, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 
 const sess = {
   secret: 'a really long string for hash',

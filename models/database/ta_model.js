@@ -5,11 +5,7 @@ const User = require('./user_model');
 const Ta = sequelize.define('ta', {
     user_id: {
         type: Sequelize.STRING,
-        primaryKey: true,
-        references: {
-            model: User,
-            key: 'user_id'
-        }
+        primaryKey: true
     },
     firstName: {
         type: Sequelize.STRING,

@@ -115,7 +115,9 @@ exports.postSignup = (req, res, next) => {
 
 
 exports.getInfo = (req, res, next) => {
-
+    res.render('auth/profileInfo.ejs', {
+        title: 'profileInfo'
+    });
 }
 
 

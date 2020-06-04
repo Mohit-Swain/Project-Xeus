@@ -6,10 +6,6 @@ const Student = sequelize.define('student', {
     user_id: {
         type: Sequelize.STRING,
         primaryKey: true,
-        references: {
-            model: User,
-            key: 'user_id'
-        }
     },
     firstName: {
         type: Sequelize.STRING,
