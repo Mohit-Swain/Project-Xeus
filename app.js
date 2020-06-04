@@ -3,17 +3,25 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const express_session = require('express-session');
 
 
 const sequelize = require('./utils/database/sequelize_init');
 
-// db modules
-const user_model = require('./models/database/user_model');
-const teacher_model = require('./models/database/teacher_model');
-const student_model = require('./models/database/student_model');
-const ta_model = require('./models/database/ta_model');
+// // db modules
+// const user_model = require('./models/database/user_model');
+// const teacher_model = require('./models/database/teacher_model');
+// const student_model = require('./models/database/student_model');
+// const ta_model = require('./models/database/ta_model');
 
-
+const sess = {
+  secret: 'a really long string for hash',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 3 * 60 * 60 * 1000
+  }
+}
 // Routes
 const authRoutes = require('./routes/auth/user_auth');
 const indexRouter = require("./routes/index");
@@ -32,6 +40,8 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(express_session(sess));
+
 app.use(express.static(path.join(__dirname, "public")));
 
 
