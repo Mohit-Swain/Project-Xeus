@@ -42,8 +42,32 @@
   </nav>
 
 
-<!--page wrapper-->
-<div class="page-wrapper"></div>
+  <div class="d-flex  " style="height: 100vh;">
+    <div class="flex-child col-5 " style="background-color: #06bca5; padding: 2rem;">
+        <!-- ok -->
+        <form action="/login" method="post" class="vertical-center rounded"
+            style="border: 3px dashed whitesmoke; padding: 2rem;">
+            <div class="form-group row">
+                <label for="exampleInputEmail1" class=" col-form-label col-sm-3">Email address</label>
+                <input type="email" class="form-control col-sm-9" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                <small id="emailHelp" class="form-text text-muted ml-auto">We'll never share your email with
+                    anyone
+                    else.</small>
+            </div>
+            <div class="form-group row">
+                <label for="exampleInputPassword1" class=" col-form-label col-sm-3">Password</label>
+                <input type="password" class="form-control col-sm-9" id="exampleInputPassword1"
+                    placeholder="Password" name="password">
+            </div>
+            <input type="submit" class="btn btn-outline-light d-block mx-auto" value=" Login"><br><br>
+            <p class="message" style="text-align: center;">Not registered? <a href="signup.ejs"><b>Sign Up here</b></a></p>
+        </form>
+    </div>
+    <div class="flex-child img-fluid col-7 ">
+        <img src="images/pc_login.svg" class="w-100 vertical-center" alt="">
+    </div>
+</div>
 
 
 <!-- Footer -->
