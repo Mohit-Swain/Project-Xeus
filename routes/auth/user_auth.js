@@ -13,4 +13,8 @@ router.get('/signup', user_auth_controller.getSignup);
 router.post('/signup', user_auth_controller.postSignup);
 
 router.get('/fillinfo', user_auth_controller.getInfo);
+
+router.get('/dashboard',(req,res) => {res.render('dashboard')},{title : 'dashboard'});
+
 module.exports = router;
+

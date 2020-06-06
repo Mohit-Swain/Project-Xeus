@@ -53,7 +53,7 @@ app.use("/", indexRouter);
 app.use(authRoutes);
 
 sequelize.sync({
-  // force: true
+   force: true
 }).then(() => {
   console.log('model ready');
 }).catch((err) => {
