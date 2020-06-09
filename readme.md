@@ -1,3 +1,3 @@
 ### Project Xeus
 
-- A node js backed web application to ease the process of coding assignment correction by the teachers.
+- A flask backed web application to Post blogs and do CURD on them with authentication.
